@@ -59,6 +59,10 @@ type Copy struct {
 	// of a directory tree being copied, or the "pivot point", a location
 	// in the source path marked by a path component named ".".
 	Excludes []string
+	// If set, overrides the default archive-extraction behavior for ADD:
+	// true forces extraction, false forces a plain copy. If unset, local
+	// archives are extracted and remote ones aren't.
+	Unpack *bool
 }
 
 // File defines if any additional file needs to be created
